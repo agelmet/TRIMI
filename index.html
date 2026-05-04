@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="el" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Χλόη Τρίμη | Ψυχαναλυτική & Ομαδική Ψυχοθεραπεία</title>
+    <meta name="description" content="Η Χλόη Τρίμη είναι αδειούχος Ψυχοθεραπεύτρια και Σύμβουλος Ψυχικής Υγείας στην Κυψέλη. Εξειδίκευση στην ατομική ψυχαναλυτική προσέγγιση και ομαδική θεραπεία.">
+    <meta name="keywords" content="Χλόη Τρίμη, Ψυχοθεραπεύτρια Κυψέλη, Ομαδική Ανάλυση, Ψυχανάλυση, Διατροφικές διαταραχές, Σύμβουλος Ψυχικής Υγείας">
+    <meta name="author" content="Advon Media">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/2025-12-29.jpg" type="image/jpeg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lux: {
+                            navy: '#121A21',
+                            slate: '#1E2B38',
+                            taupe: '#C8B6A6',
+                            sand: '#E3DCD2',
+                            cream: '#F9F8F6',
+                            dark: '#0A0E12'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Jost', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    boxShadow: {
+                        'lux': '0 20px 40px -10px rgba(0,0,0,0.08)',
+                        'glow': '0 0 30px -5px rgba(200, 182, 166, 0.4)',
+                    },
+                    animation: {
+                        'marquee': 'marquee 45s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'zoom-slow': 'zoomSlow 20s ease-out both',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        zoomSlow: {
+                            '0%': { transform: 'scale(1.15)' },
+                            '100%': { transform: 'scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F9F8F6; }
+        ::-webkit-scrollbar-thumb { background: #C8B6A6; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #1E2B38; }
+
+        /* Typography & Utilities */
+        .text-balance { text-wrap: balance; }
+        
+        /* Reveal Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.2s; }
+        .reveal-delay-2 { transition-delay: 0.4s; }
+
+        /* Glassmorphism */
+        .glass-nav {
+            background: rgba(249, 248, 246, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(200, 182, 166, 0.2);
+        }
+        
+        .glass-card-dark {
+            background: rgba(30, 43, 56, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(200, 182, 166, 0.15);
+        }
+
+        /* Marquee specific */
+        .marquee-container { display: flex; width: 200%; }
+        .marquee-container:hover { animation-play-state: paused; }
+
+        /* Lightbox */
+        #lightbox {
+            opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        }
+        #lightbox.active { opacity: 1; pointer-events: auto; }
+        #lightbox img { transform: scale(0.95); transition: transform 0.4s ease; }
+        #lightbox.active img { transform: scale(1); }
+
+        /* Clean Card Hover */
+        .lux-card { transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        .lux-card:hover { transform: translateY(-8px); box-shadow: var(--tw-shadow-lux); }
+
+        /* Masonry fix */
+        .masonry-grid { column-gap: 1.5rem; }
+        .masonry-item { break-inside: avoid; margin-bottom: 1.5rem; }
+    </style>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-lux-cream text-lux-navy font-sans antialiased overflow-x-hidden selection:bg-lux-taupe selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500 glass-nav" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex flex-col items-start group relative">
+                <span class="font-serif text-2xl tracking-[0.2em] font-bold text-lux-navy uppercase transition-colors group-hover:text-lux-taupe drop-shadow-sm">Χλόη Τρίμη</span>
+                <span class="text-[0.65rem] tracking-[0.3em] text-lux-slate uppercase mt-1 opacity-80">Ψυχοθεραπεύτρια</span>
+            </a>
+            
+            <div class="hidden lg:flex items-center space-x-10">
+                <a href="#about" class="text-sm font-medium tracking-wide uppercase hover:text-lux-taupe transition-colors">Η Ψυχοθεραπεύτρια</a>
+                <a href="#services" class="text-sm font-medium tracking-wide uppercase hover:text-lux-taupe transition-colors">Υπηρεσίες</a>
+                <a href="#approach" class="text-sm font-medium tracking-wide uppercase hover:text-lux-taupe transition-colors">Προσέγγιση</a>
+                <a href="#space" class="text-sm font-medium tracking-wide uppercase hover:text-lux-taupe transition-colors">Ο Χώρος</a>
+                <a href="#reviews" class="text-sm font-medium tracking-wide uppercase hover:text-lux-taupe transition-colors">Αξιολογήσεις</a>
+            </div>
+
+            <div class="hidden lg:block">
+                <a href="#contact" class="px-8 py-3 bg-lux-navy text-lux-cream rounded-none border border-lux-navy text-sm font-medium tracking-widest uppercase hover:bg-lux-taupe hover:border-lux-taupe transition-all duration-300">Κλείστε Ραντεβού</a>
+            </div>
+
+            <button class="lg:hidden text-lux-navy focus:outline-none" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="absolute top-full left-0 w-full bg-lux-cream/98 backdrop-blur-xl shadow-2xl hidden flex-col items-center py-10 space-y-8 border-t border-lux-taupe/20">
+            <a href="#about" class="text-lg font-medium tracking-wider uppercase mobile-link">Η Ψυχοθεραπεύτρια</a>
+            <a href="#services" class="text-lg font-medium tracking-wider uppercase mobile-link">Υπηρεσίες</a>
+            <a href="#approach" class="text-lg font-medium tracking-wider uppercase mobile-link">Προσέγγιση</a>
+            <a href="#space" class="text-lg font-medium tracking-wider uppercase mobile-link">Ο Χώρος</a>
+            <a href="#reviews" class="text-lg font-medium tracking-wider uppercase mobile-link">Αξιολογήσεις</a>
+            <a href="#contact" class="px-10 py-4 bg-lux-navy text-lux-cream text-sm font-medium tracking-widest uppercase mobile-link">Κλείστε Ραντεβού</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-24 overflow-hidden bg-lux-dark">
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center animate-zoom-slow" style="background-image: url('https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim3.jpg');"></div>
+        </div>
+        
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-lux-dark/95 via-lux-dark/80 to-transparent z-10"></div>
+        <div class="absolute inset-0 bg-lux-navy/20 mix-blend-multiply z-10"></div>
+        <div class="absolute top-0 right-0 w-[50vw] h-[50vw] bg-lux-taupe/10 rounded-full blur-[120px] z-10"></div>
+
+        <div class="max-w-7xl mx-auto w-full px-6 relative z-20">
+            <div class="max-w-3xl text-center md:text-left reveal">
+                <div class="inline-block border-l-2 border-lux-taupe pl-4 mb-8">
+                    <p class="text-lux-taupe text-sm tracking-[0.3em] uppercase font-semibold">Χλόη Τρίμη • Αρ. Αδείας: 158016544</p>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-serif text-lux-cream leading-[1.1] mb-8 text-balance drop-shadow-xl">
+                    Αναζητώντας το <span class="text-lux-taupe italic">Νόημα</span><br>μέσα από τη <span class="text-lux-taupe italic">Σύνδεση</span>
+                </h1>
+                <p class="text-lg md:text-xl text-lux-sand mb-12 max-w-2xl leading-relaxed drop-shadow-md font-light">
+                    Ψυχαναλυτική & Ομαδική Ψυχοθεραπεία. Ένας ασφαλής, ιδιωτικός χώρος στην Κυψέλη για να ακουστούν οι πιο κρυφές πτυχές του εαυτού σας.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center md:justify-start justify-center gap-6">
+                    <a href="#contact" class="px-10 py-4 bg-lux-taupe text-lux-navy font-medium tracking-wider uppercase hover:bg-lux-cream transition-colors duration-300 flex items-center gap-3 w-full sm:w-auto justify-center shadow-glow">
+                        Έναρξη Θεραπείας
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-lux-cream to-transparent z-20"></div>
+    </section>
+
+    <!-- Bio / About Section -->
+    <section id="about" class="py-32 px-6 relative bg-lux-cream overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+            
+            <div class="lg:col-span-5 relative reveal">
+                <div class="relative z-10 p-2 bg-white shadow-lux animate-float">
+                    <img src="https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/2025-12-29.jpg" alt="Χλόη Τρίμη - Ψυχοθεραπεύτρια" class="w-full h-auto object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700">
+                </div>
+                <div class="absolute -bottom-8 -left-8 w-64 h-64 border border-lux-taupe/30 z-0 hidden md:block"></div>
+                <div class="absolute -top-8 -right-8 w-40 h-40 bg-lux-taupe/10 z-0 hidden md:block"></div>
+            </div>
+
+            <div class="lg:col-span-7 reveal reveal-delay-1">
+                <h2 class="text-3xl md:text-5xl font-serif text-lux-navy mb-8">Η Ψυχοθεραπεύτρια</h2>
+                <div class="space-y-6 text-lg text-lux-slate/80 font-light leading-relaxed">
+                    <p>
+                        Η <strong>Χλόη Τρίμη</strong> είναι αδειούχος Ψυχοθεραπεύτρια και Σύμβουλος Ψυχικής Υγείας, διατηρώντας το ιδιωτικό της γραφείο στην περιοχή της Κυψέλης. Το ακαδημαϊκό της ταξίδι ξεκίνησε από το Τμήμα Ανθρωπιστικών Σπουδών του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης (Α.Π.Θ.), μια αφετηρία που της προσέφερε μια βαθιά φιλοσοφική και πολυδιάστατη κατανόηση της ανθρώπινης ύπαρξης.
+                    </p>
+                    <p>
+                        Στη συνέχεια, αφοσιώθηκε στον πυρήνα της ψυχικής υγείας, ολοκληρώνοντας μια μακρά και απαιτητική εκπαίδευση ως Ψυχοθεραπεύτρια - Ομαδική Αναλύτρια στο διακεκριμένο <strong>Ελληνικό Δίκτυο Ομαδικών Αναλυτών (Ε.Δ.Ο.Α.)</strong>.
+                    </p>
+                    <p>
+                        Η κλινική της ταυτότητα είναι ζυμωμένη μέσα σε απαιτητικά πλαίσια ψυχοκοινωνικής αποκατάστασης. Έχει εργαστεί ως Ψυχοθεραπεύτρια και Συντονίστρια Ομάδων στην Εταιρεία Κοινωνικής Ψυχιατρικής, στο Εξειδικευμένο Κέντρο Ημέρας «Κέντρο Κοινωνικού Διαλόγου», καθώς και στο Ι.ΨΥ.Π.Α.
+                    </p>
+                    <p class="pt-4 border-t border-lux-taupe/30 font-medium text-lux-navy">
+                        Σήμερα, αντλώντας από αυτή τη "βαριά" κλινική εμπειρία και με την υποστήριξη δεκάδων θεραπευόμενων, υποδέχεται ανθρώπους που επιθυμούν να ανακουφιστούν από το άγχος, τις διατροφικές διαταραχές και τον συναισθηματικό πόνο.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 px-6 bg-[#F2EFEA] relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 reveal">
+                <span class="text-lux-taupe font-bold tracking-[0.2em] text-xs uppercase">Εξειδικευμενες Υπηρεσιες</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-lux-navy mt-4 mb-6">Τομείς Παρέμβασης</h2>
+                <div class="w-16 h-px bg-lux-taupe mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <div class="bg-white p-12 lux-card reveal group relative overflow-hidden border border-lux-sand">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-lux-taupe/5 rounded-bl-full transition-transform group-hover:scale-150 duration-700"></div>
+                    <div class="relative z-10">
+                        <i data-lucide="user" class="w-10 h-10 text-lux-taupe mb-8"></i>
+                        <h3 class="text-2xl font-serif text-lux-navy mb-4">Ψυχαναλυτική Ψυχοθεραπεία</h3>
+                        <p class="text-lux-slate/70 mb-6 font-light leading-relaxed">
+                            Στην ατομική ψυχαναλυτική ψυχοθεραπεία (50'), δεν ψάχνουμε για "γρήγορες συνταγές". Εξερευνούμε τα βαθύτερα, ασυνείδητα αίτια των δυσκολιών σας, με δικό σας ρυθμό. Φωτίζουμε τα μοτίβα που επαναλαμβάνετε, βοηθώντας σας να αποκτήσετε ουσιαστική επίγνωση.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-lux-cream text-lux-navy text-xs tracking-wider border border-lux-sand">Ατομική Συνεδρία 50'</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-12 lux-card reveal reveal-delay-1 group relative overflow-hidden border border-lux-sand">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-lux-taupe/5 rounded-bl-full transition-transform group-hover:scale-150 duration-700"></div>
+                    <div class="relative z-10">
+                        <i data-lucide="activity" class="w-10 h-10 text-lux-taupe mb-8"></i>
+                        <h3 class="text-2xl font-serif text-lux-navy mb-4">Διαχείριση Άγχους & Πανικού</h3>
+                        <p class="text-lux-slate/70 mb-6 font-light leading-relaxed">
+                            Ο πανικός, η διαρκής ανησυχία και η διαταραγμένη σχέση με το φαγητό είναι ο τρόπος της ψυχής να μιλήσει όταν τα λόγια στερεύουν. Σε ένα μη-επικριτικό πλαίσιο, αποκωδικοποιούμε το "μήνυμα" πίσω από το σύμπτωμα.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-lux-cream text-lux-navy text-xs tracking-wider border border-lux-sand">Διατροφικές Διαταραχές</span>
+                            <span class="px-3 py-1 bg-lux-cream text-lux-navy text-xs tracking-wider border border-lux-sand">Άγχος & Διάθεση</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-12 lux-card reveal group relative overflow-hidden border border-lux-sand">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-lux-taupe/5 rounded-bl-full transition-transform group-hover:scale-150 duration-700"></div>
+                    <div class="relative z-10">
+                        <i data-lucide="users" class="w-10 h-10 text-lux-taupe mb-8"></i>
+                        <h3 class="text-2xl font-serif text-lux-navy mb-4">Ομαδική Ανάλυση</h3>
+                        <p class="text-lux-slate/70 mb-6 font-light leading-relaxed">
+                            Αξιοποιώντας την υψηλή εξειδίκευσή μου ως Ομαδική Αναλύτρια (Ε.Δ.Ο.Α.), προσφέρω συνεδρίες Group Therapy. Η ομάδα λειτουργεί ως κοινωνικός "καθρέφτης", ιδανικό περιβάλλον για βελτίωση διαπροσωπικών σχέσεων και υπέρβαση της απομόνωσης.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-lux-cream text-lux-navy text-xs tracking-wider border border-lux-sand">Group Therapy 90'</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-12 lux-card reveal reveal-delay-1 group relative overflow-hidden border border-lux-sand">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-lux-taupe/5 rounded-bl-full transition-transform group-hover:scale-150 duration-700"></div>
+                    <div class="relative z-10">
+                        <i data-lucide="home" class="w-10 h-10 text-lux-taupe mb-8"></i>
+                        <h3 class="text-2xl font-serif text-lux-navy mb-4">Συμβουλευτική Ζεύγους & Γονέων</h3>
+                        <p class="text-lux-slate/70 mb-6 font-light leading-relaxed">
+                            Η οικογένεια και το ζευγάρι είναι μικρά "συστήματα". Προσφέρονται συνεδρίες ζεύγους για αντιμετώπιση κρίσεων και συμβουλευτική γονέων/παιδιών για κατανόηση αναγκών και μείωση της έντασης στο οικογενειακό περιβάλλον.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-lux-cream text-lux-navy text-xs tracking-wider border border-lux-sand">Ζεύγος 90'</span>
+                            <span class="px-3 py-1 bg-lux-cream text-lux-navy text-xs tracking-wider border border-lux-sand">Γονείς & Παιδιά 60'</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section id="approach" class="py-32 px-6 bg-lux-navy text-lux-cream relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <div class="reveal">
+                    <span class="text-lux-taupe font-bold tracking-[0.2em] text-xs uppercase mb-4 block">Προσεγγιση</span>
+                    <h2 class="text-4xl md:text-5xl font-serif text-white mb-8 leading-tight">Η Ψυχοθεραπεία ως<br><span class="italic text-lux-taupe">"Εσωτερικός και Κοινωνικός Διάλογος"</span></h2>
+                    <p class="text-lux-sand/80 font-light text-lg mb-12">
+                        Εάν παρατηρήσετε την πορεία μου, θα διαπιστώσετε πως υπάρχει ένας κοινός παρονομαστής που διατρέχει τις σπουδές και την εργασία μου: Η έννοια του Διαλόγου.
+                    </p>
+                    
+                    <div class="space-y-10">
+                        <div class="flex gap-6 group">
+                            <div class="w-12 h-12 rounded-full border border-lux-taupe flex items-center justify-center shrink-0 group-hover:bg-lux-taupe transition-colors duration-300">
+                                <span class="font-serif text-xl group-hover:text-lux-navy transition-colors text-lux-taupe">1</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-serif text-white mb-2">Η Κληρονομιά των Ανθρωπιστικών Σπουδών</h4>
+                                <p class="text-lux-sand/70 font-light leading-relaxed">Δεν βλέπω τον άνθρωπο ως "ασθενή". Τον προσεγγίζω με βάση την Ανθρωπιστική μου παιδεία: ως ένα μοναδικό ον που κουβαλάει μια ιστορία και μια βαθιά υπαρξιακή ανάγκη για νόημα.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 group">
+                            <div class="w-12 h-12 rounded-full border border-lux-taupe flex items-center justify-center shrink-0 group-hover:bg-lux-taupe transition-colors duration-300">
+                                <span class="font-serif text-xl group-hover:text-lux-navy transition-colors text-lux-taupe">2</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-serif text-white mb-2">Η Ομαδική Ανάλυση ως "Μικρόκοσμος"</h4>
+                                <p class="text-lux-sand/70 font-light leading-relaxed">Όλα μας τα τραύματα έχουν γεννηθεί μέσα σε σχέσεις. Και γι' αυτό, μόνο μέσα από ασφαλείς σχέσεις (ατομικές ή ομαδικές) μπορούν να επουλωθούν.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 group">
+                            <div class="w-12 h-12 rounded-full border border-lux-taupe flex items-center justify-center shrink-0 group-hover:bg-lux-taupe transition-colors duration-300">
+                                <span class="font-serif text-xl group-hover:text-lux-navy transition-colors text-lux-taupe">3</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-serif text-white mb-2">Το Βάθος αντί για την Επιφάνεια</h4>
+                                <p class="text-lux-sand/70 font-light leading-relaxed">Στην Ψυχαναλυτική προσέγγιση, δεν βιαζόμαστε να "κουκουλώσουμε" το σύμπτωμα. Έχουμε την υπομονή να σκάψουμε λίγο πιο βαθιά. Όταν θεραπεύεται η ρίζα, το σύμπτωμα δεν έχει πια λόγο ύπαρξης.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 group">
+                            <div class="w-12 h-12 rounded-full border border-lux-taupe flex items-center justify-center shrink-0 group-hover:bg-lux-taupe transition-colors duration-300">
+                                <span class="font-serif text-xl group-hover:text-lux-navy transition-colors text-lux-taupe">4</span>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-serif text-white mb-2">Το Μάθημα από την "Κοινωνική Ψυχιατρική"</h4>
+                                <p class="text-lux-sand/70 font-light leading-relaxed">Έχω αντικρίσει τον ψυχικό πόνο στις πιο έντονες μορφές του. Στέκομαι απέναντί του με απόλυτη ψυχραιμία, ελπίδα και μηδενικό στίγμα. Οτιδήποτε κι αν φέρετε στο γραφείο, θα αντέξουμε να το κοιτάξουμε μαζί.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden lg:block relative h-full w-full reveal reveal-delay-2 pl-12">
+                    <div class="sticky top-32 w-full aspect-[3/4] border border-lux-taupe/30 p-2">
+                        <img src="https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim8.jpg" alt="Λεπτομέρεια Χώρου" class="w-full h-full object-cover filter brightness-90">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Space / Gallery Section -->
+    <section id="space" class="py-32 px-6 bg-lux-cream text-lux-navy">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 reveal">
+                <span class="text-lux-taupe font-bold tracking-[0.2em] text-xs uppercase block mb-4">Το Περιβαλλον</span>
+                <h2 class="text-4xl md:text-5xl font-serif mb-6">Ο Χώρος Θεραπείας</h2>
+                <p class="text-lux-slate/70 max-w-2xl mx-auto font-light">Σχεδιασμένος για να αποπνέει ηρεμία, ασφάλεια και απόλυτη ιδιωτικότητα. Μια ματιά στο γραφείο μας στην Κυψέλη.</p>
+            </div>
+
+            <div class="columns-1 md:columns-2 lg:columns-3 masonry-grid">
+                <!-- Using provided images uncropped (true size format via masonry) -->
+                <button class="w-full masonry-item overflow-hidden group relative reveal cursor-zoom-in" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim3.jpg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim3.jpg" class="w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700" alt="Space">
+                </button>
+                <button class="w-full masonry-item overflow-hidden group relative reveal cursor-zoom-in" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim10.jpg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim10.jpg" class="w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700" alt="Space">
+                </button>
+                <button class="w-full masonry-item overflow-hidden group relative reveal cursor-zoom-in" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim11.jpg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim11.jpg" class="w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700" alt="Space">
+                </button>
+                <button class="w-full masonry-item overflow-hidden group relative reveal cursor-zoom-in" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim9.jpg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim9.jpg" class="w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700" alt="Space">
+                </button>
+                <button class="w-full masonry-item overflow-hidden group relative reveal cursor-zoom-in" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim5.jpg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim5.jpg" class="w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700" alt="Space">
+                </button>
+                <button class="w-full masonry-item overflow-hidden group relative reveal cursor-zoom-in" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim7.jpg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim7.jpg" class="w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700" alt="Space">
+                </button>
+                <button class="w-full masonry-item overflow-hidden group relative reveal cursor-zoom-in" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim6.jpg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim6.jpg" class="w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700" alt="Space">
+                </button>
+                <button class="w-full masonry-item overflow-hidden group relative reveal cursor-zoom-in" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim2.jpg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim2.jpg" class="w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700" alt="Space">
+                </button>
+                <button class="w-full masonry-item overflow-hidden group relative reveal cursor-zoom-in" onclick="openLightbox('https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim4.jpg')">
+                    <img src="https://raw.githubusercontent.com/agelmet/TRIMI/refs/heads/main/trim4.jpg" class="w-full h-auto transform group-hover:scale-[1.02] transition-transform duration-700" alt="Space">
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Element -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-lux-dark/95 flex items-center justify-center cursor-zoom-out" onclick="closeLightbox()">
+        <button class="absolute top-8 right-8 text-white hover:text-lux-taupe transition-colors">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Enlarged Space Image" class="max-w-[90vw] max-h-[90vh] object-contain shadow-2xl cursor-default" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-32 bg-white overflow-hidden border-y border-lux-sand/50">
+        <div class="max-w-7xl mx-auto px-6 mb-16 text-center reveal">
+            <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" alt="Doctoranytime" class="h-8 mx-auto mb-6 object-contain">
+            <h2 class="text-4xl font-serif text-lux-navy mb-4">Εμπειρίες Θεραπευόμενων</h2>
+            <p class="text-lux-slate/70 font-light">Η εμπιστοσύνη σας είναι η μεγαλύτερη απόδειξη της δουλειάς μας.</p>
+        </div>
+
+        <div class="w-full overflow-hidden relative pb-10">
+            <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+            
+            <div class="marquee-container animate-marquee">
+                <!-- Group 1 -->
+                <div class="flex space-x-6 px-3 items-stretch">
+                    <!-- Rev 1 -->
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">10.0</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Επισκεφτήκαμε την κ.Τρίμμη για να μας βοηθήσει να αντιμετωπίσουμε τα προβλήματα στην σχέση μας με τον έφηβο γιό μας. Εξαιρετική επαγγελματίας με γνώσεις και ευαισθησία. Η βοήθεια της ήταν πολύ σημαντική καθώς μας ενέπνευσε εμπιστοσύνη και δύναμη."</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">MARIA</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">13 ΑΥΓΟΥΣΤΟΥ 2025</p>
+                        </div>
+                    </div>
+                    <!-- Rev 2 -->
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">10.0</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Εχει την εμπειρία και την ικανότητα να σε βοηθήσει πραγματικά!!!!"</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">GIORGOS</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">16 ΑΠΡΙΛΙΟΥ 2025</p>
+                        </div>
+                    </div>
+                    <!-- Rev 3 -->
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">10.0</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Εξαίρετη ειδικός, με ενσυναίσθηση και επαγγελματισμό"</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">PANAGIOTIS</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">24 ΙΟΥΛΙΟΥ 2022</p>
+                        </div>
+                    </div>
+                    <!-- Rev 4 -->
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">10.0</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Εμπνέει εμπιστοσύνη αξιόλογη επαγγελματίας"</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">ΥΒΟΝΝΗ</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">18 ΙΟΥΛΙΟΥ 2022</p>
+                        </div>
+                    </div>
+                    <!-- Rev 5 -->
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">9.4</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Έως τώρα άψογη αντιμετώπιση, οικειότητα, εστίαση στους προβληματισμούς του πελάτη, εξαιρετική συμβούλευση στην διαχείριση των καταστάσεων και πολύ καινοτόμα σε σχέση με τα δεδομένα τα οποία ήδη γνωρίζουμε."</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">ΕΡΝΕΣΤΟ</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">15 ΙΟΥΛΙΟΥ 2022</p>
+                        </div>
+                    </div>
+                    <!-- Rev 6 -->
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">10.0</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Με έκανε να νιώσω από τη πρώτη στιγμή πολύ άνετα, νιώθω όμορφα και μια θετική, ήρεμη αύρα. Με βοήθησε να προσδιορίσω τις σκέψεις μου με επαγγελματισμό αλλά συνάμα ανθρώπινο τρόπο. Την συνιστώ ανεπιφύλακτα!"</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">ΕΛΕΝΑ</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">14 ΙΟΥΛΙΟΥ 2022</p>
+                        </div>
+                    </div>
+                    <!-- Rev 7 -->
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">9.6</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Η κα Τρίμη στην πρώτη συνεδρία γνωριμίας ήταν πολύ προσιτή δημιουργώντας οικειότητα και άνεση, που σε κάνει να νιώθεις ότι μπορείς να ανοιχθείς και να μιλήσεις μαζί της για ότι σε απασχολεί"</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">ΜΑΙΡΑ</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">02 ΔΕΚΕΜΒΡΙΟΥ 2021</p>
+                        </div>
+                    </div>
+                    <!-- Rev 8 -->
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">10.0</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Η κυρία Τρίμη είναι μία σοβαρή, υπεύθυνη επαγγελματίας η οποία με έκανε να αισθανθώ άνετα από το πρώτο λεπτό. Με έκανε να καταλάβω τον εαυτό μου και να πιστέψω σε αυτόν. Τη συστήνω χωρίς κανέναν ενδοιασμό."</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">ΠΑΝΑΓΙΩΤΗΣ</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">28 ΜΑΪΟΥ 2021</p>
+                        </div>
+                    </div>
+                    <!-- Rev 9 -->
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">9.4</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Θεωρώ τον εαυτό μου τυχερό που βρήκα την ψυχολόγο που φανταζόμουν τόσο άμεσα. Μου αποπνέει ένα συναίσθημα ασφάλειας και εμπιστοσύνης. Τόσο η αντίληψή της όσο και η εμπειρία της είναι στα επίπεδα που αναζητούσα."</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">ΠΑΝΑΓΙΩΤΗΣ</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">28 ΜΑΪΟΥ 2021</p>
+                        </div>
+                    </div>
+                    <!-- Rev 10 -->
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">10.0</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Η κ Τρίμη ανήκει στην γενιά ψυχολόγων που έχει πιάσει τον μοντέρνο παλμό. Άμεση, ειλικρινής, με χιούμορ και ανθρωπιά. Το ζητούμενο είναι να φεύγεις με λιγότερα ερωτηματικά. Νιώθεις ότι είναι η άγκυρά σου."</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">ΕΛΕΝΗ</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">28 ΜΑΪΟΥ 2021</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Duplicate for seamless scroll -->
+                <div class="flex space-x-6 px-3 items-stretch" aria-hidden="true">
+                    <!-- Duplicate of above code for seamless effect -->
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">10.0</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Επισκεφτήκαμε την κ.Τρίμμη για να μας βοηθήσει να αντιμετωπίσουμε τα προβλήματα στην σχέση μας με τον έφηβο γιό μας. Εξαιρετική επαγγελματίας με γνώσεις και ευαισθησία. Η βοήθεια της ήταν πολύ σημαντική καθώς μας ενέπνευσε εμπιστοσύνη και δύναμη."</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">MARIA</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">13 ΑΥΓΟΥΣΤΟΥ 2025</p>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">10.0</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Εχει την εμπειρία και την ικανότητα να σε βοηθήσει πραγματικά!!!!"</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">GIORGOS</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">16 ΑΠΡΙΛΙΟΥ 2025</p>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">10.0</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Εξαίρετη ειδικός, με ενσυναίσθηση και επαγγελματισμό"</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">PANAGIOTIS</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">24 ΙΟΥΛΙΟΥ 2022</p>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">10.0</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Εμπνέει εμπιστοσύνη αξιόλογη επαγγελματίας"</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">ΥΒΟΝΝΗ</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">18 ΙΟΥΛΙΟΥ 2022</p>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">9.4</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Έως τώρα άψογη αντιμετώπιση, οικειότητα, εστίαση στους προβληματισμούς του πελάτη, εξαιρετική συμβούλευση στην διαχείριση των καταστάσεων και πολύ καινοτόμα σε σχέση με τα δεδομένα τα οποία ήδη γνωρίζουμε."</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">ΕΡΝΕΣΤΟ</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">15 ΙΟΥΛΙΟΥ 2022</p>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">10.0</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Με έκανε να νιώσω από τη πρώτη στιγμή πολύ άνετα, νιώθω όμορφα και μια θετική, ήρεμη αύρα. Με βοήθησε να προσδιορίσω τις σκέψεις μου με επαγγελματισμό αλλά συνάμα ανθρώπινο τρόπο. Την συνιστώ ανεπιφύλακτα!"</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">ΕΛΕΝΑ</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">14 ΙΟΥΛΙΟΥ 2022</p>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">9.6</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Η κα Τρίμη στην πρώτη συνεδρία γνωριμίας ήταν πολύ προσιτή δημιουργώντας οικειότητα και άνεση, που σε κάνει να νιώθεις ότι μπορείς να ανοιχθείς και να μιλήσεις μαζί της για ότι σε απασχολεί"</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">ΜΑΙΡΑ</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">02 ΔΕΚΕΜΒΡΙΟΥ 2021</p>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">10.0</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Η κυρία Τρίμη είναι μία σοβαρή, υπεύθυνη επαγγελματίας η οποία με έκανε να αισθανθώ άνετα από το πρώτο λεπτό. Με έκανε να καταλάβω τον εαυτό μου και να πιστέψω σε αυτόν. Τη συστήνω χωρίς κανέναν ενδοιασμό."</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">ΠΑΝΑΓΙΩΤΗΣ</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">28 ΜΑΪΟΥ 2021</p>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">9.4</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Θεωρώ τον εαυτό μου τυχερό που βρήκα την ψυχολόγο που φανταζόμουν τόσο άμεσα. Μου αποπνέει ένα συναίσθημα ασφάλειας και εμπιστοσύνης. Τόσο η αντίληψή της όσο και η εμπειρία της είναι στα επίπεδα που αναζητούσα."</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">ΠΑΝΑΓΙΩΤΗΣ</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">28 ΜΑΪΟΥ 2021</p>
+                        </div>
+                    </div>
+                    <div class="w-80 bg-lux-cream p-8 shadow-sm shrink-0 border border-lux-sand flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="font-bold text-lux-navy font-serif text-xl">10.0</span>
+                                <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 opacity-40" alt="DA">
+                            </div>
+                            <p class="text-lux-slate/80 text-sm mb-6 font-light">"Η κ Τρίμη ανήκει στην γενιά ψυχολόγων που έχει πιάσει τον μοντέρνο παλμό. Άμεση, ειλικρινής, με χιούμορ και ανθρωπιά. Το ζητούμενο είναι να φεύγεις με λιγότερα ερωτηματικά. Νιώθεις ότι είναι η άγκυρά σου."</p>
+                        </div>
+                        <div class="border-t border-lux-sand pt-4 mt-auto">
+                            <p class="text-xs font-bold text-lux-navy tracking-wider uppercase">ΕΛΕΝΗ</p>
+                            <p class="text-[10px] text-lux-slate/60 tracking-wider">28 ΜΑΪΟΥ 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <a href="https://www.doctoranytime.gr/d/Symvoulos-psychikis-ygeias/trimi-xloi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 bg-lux-navy text-white text-xs tracking-widest font-bold hover:bg-lux-taupe transition-colors duration-300 uppercase">
+                    Διαβαστε ολες τις αξιολογησεις
+                    <img src="https://raw.githubusercontent.com/agelmet/KARAZOLI/refs/heads/main/lgoodoc.jpg" class="h-4 filter brightness-0 invert" alt="DA">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-lux-dark text-lux-sand pt-32 pb-12 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-12 gap-12 lg:gap-24 mb-20">
+                
+                <div class="md:col-span-5 reveal">
+                    <span class="font-serif text-3xl tracking-[0.1em] text-white block mb-6">Χλόη Τρίμη</span>
+                    <p class="text-lux-sand/60 font-light mb-10 max-w-sm leading-relaxed">
+                        Η επούλωση ξεκινά με ένα βήμα. Επικοινωνήστε για να ορίσουμε την πρώτη σας συνεδρία σε ένα περιβάλλον απόλυτης αποδοχής.
+                    </p>
+                    <a href="https://www.doctoranytime.gr/d/Symvoulos-psychikis-ygeias/trimi-xloi" target="_blank" class="inline-flex items-center justify-center bg-lux-taupe text-lux-navy px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-white transition-colors duration-300 w-full sm:w-auto text-center">
+                        Κλειστε Ραντεβου
+                    </a>
+                </div>
+
+                <div class="md:col-span-4 reveal reveal-delay-1">
+                    <h4 class="text-sm font-bold text-white mb-8 tracking-[0.2em] uppercase">Στοιχεια Επικοινωνιας</h4>
+                    <ul class="space-y-6 text-lux-sand/80 font-light">
+                        <li class="flex items-start gap-4">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-lux-taupe shrink-0 mt-1"></i>
+                            <span class="leading-relaxed">Φωκίωνος Νέγρη, Κυψέλη<br>Αθήνα, Αττική</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-lux-taupe shrink-0 mt-1"></i>
+                            <span class="leading-relaxed">Σωκράτους 5, Μαρούσι<br>Αθήνα, Αττική</span>
+                        </li>
+                        <li class="flex items-center gap-4 mt-8">
+                            <i data-lucide="phone" class="w-5 h-5 text-lux-taupe shrink-0"></i>
+                            <a href="tel:+306932618001" class="text-lg hover:text-white transition-colors tracking-wide">693 261 8001</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-3 reveal reveal-delay-2">
+                    <h4 class="text-sm font-bold text-white mb-8 tracking-[0.2em] uppercase">Ωραριο</h4>
+                    <ul class="space-y-4 text-lux-sand/80 font-light">
+                        <li class="flex items-center gap-4">
+                            <i data-lucide="clock" class="w-5 h-5 text-lux-taupe shrink-0"></i>
+                            <span class="tracking-wide uppercase text-sm">ΔΕΥΤΕΡΑ - ΣΑΒΒΑΤΟ</span>
+                        </li>
+                        <li class="pl-9 text-sm text-lux-taupe italic">Κατόπιν Ραντεβού</li>
+                    </ul>
+
+                    <!-- Social Icons -->
+                    <div class="mt-12 flex gap-4">
+                        <a href="#" class="opacity-70 hover:opacity-100 transition-opacity"><img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/icons8-facebook-480.png" alt="Facebook" class="w-8 h-8"></a>
+                        <a href="#" class="opacity-70 hover:opacity-100 transition-opacity"><img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/instagram-logo-instagram-icon-transparent-free-png.png.webp" alt="Instagram" class="w-8 h-8"></a>
+                        <a href="#" class="opacity-70 hover:opacity-100 transition-opacity"><img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/icons8-linkedin-480.png" alt="LinkedIn" class="w-8 h-8"></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 reveal">
+                <p class="text-lux-sand/40 text-xs tracking-wider uppercase">© 2026 Χλόη Τρίμη. All rights reserved.</p>
+                <p class="text-lux-sand/40 text-xs tracking-wider uppercase">
+                    Designed by <a href="https://advonmedia.com" target="_blank" rel="noopener" class="text-white hover:text-lux-taupe transition-colors">Advon Media</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // Navbar Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('shadow-sm');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2');
+                navbar.classList.remove('shadow-sm');
+            }
+        });
+
+        // Intersection Observer for Reveal
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(imageSrc) {
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            setTimeout(() => {
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }, 400);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
